@@ -1,17 +1,10 @@
-# astana
+# Astana #
 
-A new Flutter project.
+## Aaron Mario Lin - 2206082341 ##
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Tugas 7 ##
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-fluttr
+- [ ] Apa perbedaan utama antara _stateless_ dan _stateful widget_ dalam konteks pengembangan aplikasi Flutter?
+- [ ] Sebutkan seluruh _widget_ yang kamu gunakan untuk menyelesaikan tugas ini dan jelaskan fungsinya masing-masing.
+- [ ] Jelaskan bagaimana cara kamu mengimplementasikan checklist diatas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
