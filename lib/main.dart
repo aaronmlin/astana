@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:astana/menu.dart';
+import 'package:astana/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Astana',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),        useMaterial3: true,
       ),
