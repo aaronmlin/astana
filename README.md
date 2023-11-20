@@ -115,3 +115,37 @@ setelah itu memanggil setiap item didalam list.
 
 6. Membuat pop-up berisi data setelah menekan tombol save, dengan menambahkan beberapa kode di `menu.dart`
 7. Membuat widget `left_drawer` dengan mengikuti ajaran tutorial
+
+
+## Tugas 9 ##
+
+- [ ] Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum  melakukan pengambilan data JSON?
+ Ya, bisa. Dalam Flutter, data JSON dapat diakses secara langsung sebagai `Map<String, dynamic>` atau `List<Map<String, dynamic>>` tergantung dari struktur JSON yang diterima. Walaupun begitu, cara ini masih kurang ideal dibandingkan tanpa menggunakan model karena alasan ketidakefisienan dan keamanan
+
+- [ ] Jelaskan fungsi dari CookieRequest dan jelaskan mengapa _instance_ CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+CookieRequest yaitu sebuah kelas yang melakukan manajemen _request_ HTTP bersamaan dengan mempertahankan cookies. Fungsi-fungsinya sebagai berikut:
+1. Mengelola _cookies_ --> mengelola _cookies_ untuk setiap HTTP _request_ dan _response_
+2. _Session persistence_ --> menggunakan sesi pengguna aktif selama aplikasi terbuka
+3. _Session consistency_ --> memastikan semua request mempertahankan _session_ yang sama
+4. Efisiensi --> Menghindari pembuatan instance CookieRequest yang berlebihan
+
+- [ ] Jelaskan mekanisme pengambilan data dari JSON hingg dapat ditampilkan di Flutter
+1. Fetch data --> menggunakan HTTP _request_ (GET) untuk mengambil data JSON dari web service
+2. JSON _deserialization_ --> mengubah data JSON menjadi objek Dart. Dilakukan dengan cara mengubah menjadi struktur map seperti di soal pertama
+3. Penggunaan Data --> Menggunakan data yang telah diubah untuk mengisi _state_ atau variabel dalam aplikasi Flutter.
+4. Menampilkan Data --> Menampiilkan data yang telah dikonversi menjadi bentuk-bentuk _widget_ dalam aplikasi Flutter.
+   
+- [ ] Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hinga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+Berikut adalah langkah-langkah mekanisme autentikasi input data akun pada Flutter ke Django
+1. Input --> memasukkan data pengguna pada form
+2. Send ke Django --> menggunakan HTTP _request_ (POST)
+3. Django menerima data dan melakukan proses autentikasi
+4. Respons ke Flutter --> menggunakan HTTP _response_
+5. Tampilan di Flutter --> Hasil dari respons akan ditampilkan di aplikasi Flutter
+
+
+- [ ] Sebutkan seluruh _widget_ yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.
+1. `Scaffold` --> membuat struktur dasar tampilan aplikasi
+2. `ListView.builder` --> membuat tampilan daftar yang bersifat dinamis
+3. `TextFormField` --> Digunakan untuk input teks dari pengguna
+4. `ElevatedButton` --> 
