@@ -1,35 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:astana/screens/shoplist_form.dart';
-import 'package:astana/widgets/shop_card.dart';
-import 'package:astana/widgets/left_drawer.dart';
-
-
+import '../widgets/left_drawer.dart';
+import '../widgets/shop_card.dart';
 
 class MyHomePage extends StatelessWidget {
-    MyHomePage({Key? key}) : super(key: key);
+  MyHomePage({Key? key}) : super(key: key);
 
-    final List<ShopItem> items = [
-    ShopItem("Lihat Item", Icons.checklist, Colors.blue), 
-    ShopItem("Tambah Item", Icons.add_shopping_cart, Colors.green),
-    ShopItem("Logout", Icons.logout, Colors.indigo),
-];
+  final List<ShopItem> items = [
+    ShopItem("Lihat Produk", Icons.checklist, Colors.blue),
+    ShopItem("Tambah Produk", Icons.add_shopping_cart, Colors.green),
+    ShopItem("Logout", Icons.logout, Colors.red),
+  ];
 
-
-     @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-            'Shopping Art',
-          ),
-          backgroundColor: Colors.indigo,
-          foregroundColor: Colors.white,
+          'Shopping List',
+          style: TextStyle(color: Colors.white)
         ),
-          // Masukkan drawer sebagai parameter nilai drawer dari widget Scaffold
-          drawer: const LeftDrawer(),
-          body: SingleChildScrollView(
-            // Widget wrapper yang dapat discroll
-            child: Padding(
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
+      ),
+      // Masukkan drawer sebagai parameter nilai drawer dari widget Scaffold
+      drawer: const LeftDrawer(),
+      body: SingleChildScrollView(
+        // Widget wrapper yang dapat discroll
+        child: Padding(
           padding: const EdgeInsets.all(10.0), // Set padding dari halaman
           child: Column(
             // Widget untuk menampilkan children secara vertikal
