@@ -1,32 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:astana/models/product.dart';
 
-class ItemDetailPage extends StatelessWidget {
-  final Product item;
 
-  const ItemDetailPage({Key? key, required this.item}) : super(key: key);
+class DetailProduct extends StatelessWidget {
+  final Product product;
+
+  const DetailProduct({Key? key, required this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(item.fields.name),
-        backgroundColor: Color.fromARGB(255, 100, 49, 6),
-        foregroundColor: Colors.white,
+        title: Text(product.fields.name),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); // Navigate back to the previous page
+          },
+        ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Text(
-              'Item Details',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              product.fields.name,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
-            Text('Price: ${item.fields.price}'),
+            Text("Amount: ${product.fields.price}"),
             SizedBox(height: 10),
-            Text('Description: ${item.fields.description}'),
+            Text("Description: ${product.fields.description}"),
+
           ],
         ),
       ),

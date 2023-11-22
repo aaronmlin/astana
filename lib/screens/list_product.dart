@@ -1,22 +1,22 @@
+import 'package:astana/screens/product_details.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:astana/models/product.dart';
 import 'package:astana/widgets/left_drawer.dart';
-import 'package:astana/screens/product_details.dart';
 
-class ItemPage extends StatefulWidget {
-    const ItemPage({Key? key}) : super(key: key);
+class ProductPage extends StatefulWidget {
+    const ProductPage({Key? key}) : super(key: key);
 
     @override
-    _ItemPageState createState() => _ItemPageState();
+    _ProductPageState createState() => _ProductPageState();
 }
 
-class _ItemPageState extends State<ItemPage> {
-Future<List<Product>> fetchItem() async {
-    // Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
+class _ProductPageState extends State<ProductPage> {
+Future<List<Product>> fetchProduct() async {
+    // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
     var url = Uri.parse(
-        'https://localhost:8000/json/');
+        'http://localhost:8000/json/');
     var response = await http.get(
         url,
         headers: {"Content-Type": "application/json"},
@@ -25,14 +25,14 @@ Future<List<Product>> fetchItem() async {
     // melakukan decode response menjadi bentuk json
     var data = jsonDecode(utf8.decode(response.bodyBytes));
 
-    // melakukan konversi data json menjadi object Item
-    List<Product> list_item = [];
+    // melakukan konversi data json menjadi object Product
+    List<Product> list_product = [];
     for (var d in data) {
         if (d != null) {
-            list_item.add(Product.fromJson(d));
+            list_product.add(Product.fromJson(d));
         }
     }
-    return list_item;
+    return list_product;
 }
 
 @override
@@ -49,7 +49,7 @@ Widget build(BuildContext context) {
         ),
         drawer: const LeftDrawer(),
         body: FutureBuilder(
-            future: fetchItem(),
+            future: fetchProduct(),
             builder: (context, AsyncSnapshot snapshot) {
                 if (snapshot.data == null) {
                     return const Center(child: CircularProgressIndicator());
@@ -73,7 +73,7 @@ Widget build(BuildContext context) {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ItemDetailPage(item: snapshot.data![index]),
+                              builder: (context) => DetailProduct(product: snapshot.data![index]),
                             ),
                           );
                         },
