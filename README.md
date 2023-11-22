@@ -148,4 +148,16 @@ Berikut adalah langkah-langkah mekanisme autentikasi input data akun pada Flutte
 1. `Scaffold` --> membuat struktur dasar tampilan aplikasi
 2. `ListView.builder` --> membuat tampilan daftar yang bersifat dinamis
 3. `TextFormField` --> Digunakan untuk input teks dari pengguna
-4. `ElevatedButton` --> 
+4. `ElevatedButton` --> Tombol untuk melakukan sebuah _action_, seperti submit form
+
+
+- [ ] Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+1. Membuat app `authentication` di projek Django rsml --> github.com/aaronmlin/rsml
+2. Menginstall dependencies yang diperlukan
+3. Membuat function untuk menerima autentikasi di app `authentication` yang dapat digunakan di projek Flutter
+4. Menginstall package dengan melakukan `flutter pub add provider` dan `flutter pub add pbp_django_auth`
+5. Memodifikasi _root widget_ sehingga menggunakan `Provider`
+6. Membuat file `login.dart` untuk membuat tampilan login --> kode menggunakan tutorial
+7. Membuat model _custom_ dengan Quicktype
+8. Menambahkan dependensi HTTP dengan menambahkan package `http`, dan melakukan fetch data dari projek Django dengan membuat file baru `list_product.dart`, tidak lupa untuk membuat routing yang sesuai dengan URL di projek Django, serta routingnya ke file lain di projek Flutter
+9. Melakukan integrasi form Flutter dengan layanan Django --> membuat function baru bernama `create_product_flutter` di `main/views.py`, dan melakukan routing pada `urls.py` seperti biasa.
